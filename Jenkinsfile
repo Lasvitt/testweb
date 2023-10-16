@@ -8,7 +8,6 @@ pipeline {
         }
         stage('deploy') {
             steps {  
-                sh "docker build ."
                 sh "id"
                 sh "whoami"
                 sh "echo deploy"
