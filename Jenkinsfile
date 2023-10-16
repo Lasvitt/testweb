@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('test') {
       steps {      
-        sh "echo hotovo"
+        sh "ls -la"
       }
     }
     stage('deploy') {
