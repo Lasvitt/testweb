@@ -15,5 +15,10 @@ pipeline {
                 sh 'mkdir -p ./build/phpmetrics'
             }
         }
+        stage('docker') {
+            steps {  
+                sh 'docker build .'
+            }
+        }
     }
 }
