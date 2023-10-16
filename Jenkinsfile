@@ -1,16 +1,18 @@
 pipeline {
     agent any
-        stages {
-        stage('test') {
+    stages {
+        stage('composer') {
             steps {      
-                sh "ls -la"
+                sh 'composer install --prefer-dist --optimize-autoloader'
+                sh 'composer require --dev phpmetrics/phpmetrics friendsofphp/php-cs-fixer --no-interaction --prefer-dist --optimize-autoloader'
             }
         }
-        stage('deploy') {
+        stage('build') {
             steps {  
-                sh "id"
-                sh "whoami"
-                sh "echo deploy"
+                sh 'rm -Rf ./build/'
+                sh 'mkdir -p ./build/coverage'
+                sh 'mkdir -p ./build/logs'
+                sh 'mkdir -p ./build/phpmetrics'
             }
         }
     }
