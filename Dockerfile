@@ -1,9 +1,8 @@
-version: "3.8"
 services:
     # Mysql database container
     db:
         image: mysql
-        container_name: tutorial_db_symfony
+        container_name: db_symfony
         restart: always
         volumes:
             - db-data:/var/lib/mysql
@@ -15,7 +14,7 @@ services:
     # phpmyadmin container
     phpmyadmin:
         image: phpmyadmin
-        container_name: tutorial_phpmyadmin
+        container_name: phpmyadmin
         restart: always
         depends_on:
             - db
@@ -29,7 +28,7 @@ services:
     # Symfony apache project container
     www:
         build: docker/php
-        container_name: tutorial_symfony
+        container_name: symfony
         ports:
           - "8741:80"
         volumes:
