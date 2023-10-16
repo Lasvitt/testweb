@@ -1,4 +1,4 @@
-version: "3.9"
+version: "3.8"
 services:
     # Mysql database container
     db:
