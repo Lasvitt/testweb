@@ -21,7 +21,6 @@ RUN pecl install apcu && docker-php-ext-enable apcu
     
 ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
 
-RUN chmod +x /usr/local/bin/install-php-extensions && sync && \
-    install-php-extensions amqp
+RUN chmod +x /usr/local/bin/install-php-extensions && install-php-extensions amqp
 
 WORKDIR /var/www
