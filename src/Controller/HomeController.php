@@ -22,7 +22,7 @@ class HomeController extends AbstractController
     {
         $number = random_int(0, 100);
 
-        return $this->render('lucky/number.html.twig', [
+        return $this->render('lucky-number.html.twig', [
             'number' => $number,
         ]);
     }
