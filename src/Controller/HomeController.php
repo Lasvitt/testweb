@@ -10,8 +10,6 @@ class HomeController extends AbstractController
     #[Route('/', name: 'home')]
     public function number(): Response
     {
-        $number = random_int(0, 100);
-
         return new Response(
             '<html><body>Home</body></html>'
         );
@@ -26,4 +24,13 @@ class HomeController extends AbstractController
             'number' => $number,
         ]);
     }
+
+    #[Route('/api', name: 'api')]
+    public function api(): Response
+    {
+        return new Response(
+            '<html><body>API future</body></html>'
+        );
+    }
+    
 }
